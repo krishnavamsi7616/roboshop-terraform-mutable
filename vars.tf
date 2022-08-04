@@ -3,3 +3,4 @@ variable "PROJECT" {}
 variable "ENV" {}
 variable "PRIVATE_SUBNETS_CIDR" {}
 variable "PUBLIC_SUBNETS_CIDR" {}
+variable "AZ" {}
