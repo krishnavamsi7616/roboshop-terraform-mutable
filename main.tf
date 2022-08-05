@@ -10,3 +10,17 @@ module "VPC" {
   DEFAULT_VPC_CIDR = var.DEFAULT_VPC_CIDR
   DEFAULT_VPC_RT = var.DEFAULT_VPC_RT
 }
+
+
+module "RDS" {
+  source = "github.com/krishnavamsi7616/tf-module-rds"
+  ENV = var.ENV
+  ENGINE =var.ENGINE
+  ENGINE_VERSION = var.ENGINE_VERSION
+  RDS_INSTANCE_CLASS = var.RDS_INSTANCE_CLASS
+  PG_FAMILY = var.PG_FAMILY
+  PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNETS_IDS
+  VPC_ID = module.VPC.VPC_ID
+  RDS_PORT = var.RDS_PORT
+  ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNETS_IDS
+}
