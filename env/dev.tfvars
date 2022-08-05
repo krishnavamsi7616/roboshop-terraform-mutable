@@ -14,7 +14,6 @@ DEFAULT_VPC_RT = "rtb-0c4326d36f53cca18"
 
 //RDS
 
-
 ENGINE = "mysql"
 ENGINE_VERSION = "5.7"
 RDS_INSTANCE_CLASS = "db.t3.micro"
