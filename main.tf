@@ -12,7 +12,7 @@ module "VPC" {
 }
 
 
-  module "RDS" {
+module "RDS" {
   source = "github.com/krishnavamsi7616/tf-module-rds"
   ENV = var.ENV
   ENGINE =var.ENGINE
