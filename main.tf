@@ -12,16 +12,16 @@ module "VPC" {
 }
 
 
-module "RDS" {
-  source = "github.com/krishnavamsi7616/tf-module-rds"
-  ENV = var.ENV
-  ENGINE =var.ENGINE
-  PROJECT = var.PROJECT
-  ENGINE_VERSION = var.ENGINE_VERSION
-  RDS_INSTANCE_CLASS = var.RDS_INSTANCE_CLASS
-  PG_FAMILY = var.PG_FAMILY
-  PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
-  VPC_ID = module.VPC.VPC_ID
-  RDS_PORT = var.RDS_PORT
-  ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_IDS
-}
+#module "RDS" {
+#  source = "github.com/krishnavamsi7616/tf-module-rds"
+#  ENV = var.ENV
+#  ENGINE =var.ENGINE
+#  PROJECT = var.PROJECT
+#  ENGINE_VERSION = var.ENGINE_VERSION
+#  RDS_INSTANCE_CLASS = var.RDS_INSTANCE_CLASS
+#  PG_FAMILY = var.PG_FAMILY
+#  VPC_ID = module.VPC.VPC_ID
+#  PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
+#  RDS_PORT = var.RDS_PORT
+#  ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_IDS
+#}
