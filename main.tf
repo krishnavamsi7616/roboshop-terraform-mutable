@@ -29,13 +29,13 @@ module "RDS" {
 module "DOCDB" {
   source          = "github.com/krishnavamsi7616/tf-module-docdb"
   ENV             = var.ENV
-  ENGINE          = var.DOCDB_ENGINE_VERSION
+  ENGINE          = var.DOCDB_ENGINE
   ENGINE_VERSION  = var.DOCDB_ENGINE_VERSION
   PROJECT         = var.PROJECT
-  DOCDB_INSTANCE_CLASS = var.DOCDB_INSTANCE_CLASS
+  INSTANCE_CLASS = var.DOCDB_INSTANCE_CLASS
   PG_FAMILY = var.DOCDB_PG_FAMILY
   VPC_ID = module.VPC.VPC_ID
   PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
-  DOCDB_PORT = var.DOCDB_PORT
+  PORT = var.DOCDB_PORT
   ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_CIDR
 }
