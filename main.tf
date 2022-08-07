@@ -26,7 +26,7 @@ module "RDS" {
   ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_CIDR
 }
 
-module "RDS" {
+module "DOCDB" {
   source          = "github.com/krishnavamsi7616/tf-module-docdb"
   ENV             = var.ENV
   ENGINE          = var.DOCDB_ENGINE_VERSION
