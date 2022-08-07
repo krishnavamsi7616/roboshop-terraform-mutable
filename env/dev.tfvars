@@ -1,5 +1,6 @@
 ENV = "dev"
 PROJECT = "roboshop"
+WORKSTATION_IP = "172.31.11.178/32"
 
 
 //VPC

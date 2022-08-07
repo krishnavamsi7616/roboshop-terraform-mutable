@@ -1,6 +1,6 @@
 variable "PROJECT" {}
 variable "ENV" {}
-
+variable "WORKSTATION_IP" {}
 
 //VPC
 variable "VPC_CIDR" {}
