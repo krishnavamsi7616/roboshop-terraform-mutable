@@ -56,8 +56,8 @@ module "ELASTICACHE" {
   NUMBER_OF_NODES = var.ELASTICACHE_NUMBER_OF_NODES
 }
 
-module "ELASTICACHE" {
-  source          = "github.com/krishnavamsi7616/tf-module-elasticache"
+module "RABBITMQ" {
+  source          = "github.com/krishnavamsi7616/tf-module-rabbitmq"
   ENV             = var.ENV
   PROJECT         = var.PROJECT
   PRIVATE_SUBNET_IDS = module.VPC.PRIVATE_SUBNET_IDS
