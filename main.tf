@@ -78,7 +78,7 @@ module "LB" {
   ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_CIDR
 }
 
-module "LB" {
+module "FRONTEND" {
   source          = "github.com/krishnavamsi7616/tf-module-mutable-app"
   ENV             = var.ENV
   PROJECT         = var.PROJECT
@@ -87,6 +87,8 @@ module "LB" {
   ALLOW_SG_CIDR = module.VPC.PRIVATE_SUBNET_CIDR
   PORT = 80
   COMPONENT = "frontend"
+  INSTANCE_TYPE = "t3.micro"
+  WORKSTATION_IP = var.WORKSTATION_IP
 }
 
 
