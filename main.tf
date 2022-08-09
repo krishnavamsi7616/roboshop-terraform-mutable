@@ -93,9 +93,8 @@ module "FRONTEND" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
   LB_ARN                = module.LB.PUBLIC_LB_ARN
+  LB_TYPE               = "public"
 }
-
-
 
 module "CART" {
   source                = "github.com/krishnavamsi7616/tf-module-mutable-app"
@@ -110,6 +109,7 @@ module "CART" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 
@@ -126,6 +126,7 @@ module "CATALOGUE" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 
@@ -142,6 +143,7 @@ module "USER" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 module "SHIPPING" {
@@ -157,6 +159,7 @@ module "SHIPPING" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
 
 
@@ -173,4 +176,5 @@ module "PAYMENT" {
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
+  LB_TYPE               = "private"
 }
