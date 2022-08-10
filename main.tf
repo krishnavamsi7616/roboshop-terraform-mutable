@@ -96,6 +96,8 @@ module "FRONTEND" {
   INSTANCE_COUNT        = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
   LB_ARN                = module.LB.PUBLIC_LB_ARN
   LB_TYPE               = "public"
+  PRIVATE_LB_DNS        = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "CART" {
