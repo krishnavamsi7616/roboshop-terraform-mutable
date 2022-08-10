@@ -78,6 +78,8 @@ module "LB" {
   PUBLIC_SUBNET_IDS     = module.VPC.PUBLIC_SUBNET_IDS
   VPC_ID                = module.VPC.VPC_ID
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
+  PUBLIC_ZONE_ID        = var.PUBLIC_ZONE_ID
 }
 
 module "FRONTEND" {
