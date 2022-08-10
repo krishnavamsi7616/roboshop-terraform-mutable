@@ -86,7 +86,7 @@ module "FRONTEND" {
   PROJECT               = var.PROJECT
   PRIVATE_SUBNET_IDS    = module.VPC.PRIVATE_SUBNET_IDS
   VPC_ID                = module.VPC.VPC_ID
-  ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
+  ALLOW_SG_CIDR         = concat(module.VPC.PRIVATE_SUBNET_CIDR,module.VPC.PUBLIC_SUBNET_CIDR)
   PORT                  = 80
   COMPONENT             = "frontend"
   INSTANCE_TYPE         = "t3.micro"
