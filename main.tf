@@ -160,6 +160,7 @@ module "USER" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
   DOCDB_ENDPOINT        = module.DOCDB.DOCDB_ENDPOINT
+  REDIS_ENDPOINT        = module.ELASTICACHE.REDIS_ENDPOINT
 }
 
 module "SHIPPING" {
@@ -202,6 +203,3 @@ module "PAYMENT" {
 }
 
 
-output "REDIS" {
-  value = module.ELASTICACHE.REDIS_ENDPOINT
-}
