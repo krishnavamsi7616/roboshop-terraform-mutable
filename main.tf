@@ -200,3 +200,8 @@ module "PAYMENT" {
   PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN  = module.LB.PRIVATE_LISTENER_ARN
 }
+
+
+output "REDIS" {
+  value = module.ELASTICACHE.REDIS_ENDPOINT
+}
