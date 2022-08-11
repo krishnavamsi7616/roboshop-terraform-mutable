@@ -39,7 +39,7 @@ module "DOCDB" {
   VPC_ID                = module.VPC.VPC_ID
   PRIVATE_SUBNET_IDS    = module.VPC.PRIVATE_SUBNET_IDS
   PORT                  = var.DOCDB_PORT
-  ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
+  ALLOW_SG_CIDR         = concat(module.VPC.PRIVATE_SUBNET_CIDR,tolist([var.WORKSTATION_IP]))
   NUMBER_OF_NODES       = var.DOCDB_NUMBER_OF_NODES
 }
 
