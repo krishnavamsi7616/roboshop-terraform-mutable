@@ -68,6 +68,7 @@ module "RABBITMQ" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   INSTANCE_TYPE         = var.RABBITMQ_INSTANCE_TYPE
   WORKSTATION_IP        = var.WORKSTATION_IP
+  PRIVATE_ZONE_ID       = var.PRIVATE_ZONE_ID
 }
 
 module "LB" {
