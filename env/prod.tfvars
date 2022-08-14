@@ -48,19 +48,19 @@ RABBITMQ_PORT = 5672
 //
 INSTANCE_COUNT = {
   FRONTEND = {
-    COUNT = 2,
+    COUNT = 2
     INSTANCE_TYPE = "t3.micro"
   }
   USER = {
-    COUNT = 2,
+    COUNT = 2
     INSTANCE_TYPE = "t3.micro"
   }
   CART = {
-    COUNT = 2,
+    COUNT = 2
     INSTANCE_TYPE = "t3.micro"
   }
   CATALOGUE = {
-    COUNT = 2,
+    COUNT = 2
     INSTANCE_TYPE = "t3.micro"
   }
   SHIPPING = {
@@ -68,7 +68,7 @@ INSTANCE_COUNT = {
     INSTANCE_TYPE = "t3.micro"
   }
   PAYMENT = {
-    COUNT = 2,
+    COUNT = 2
     INSTANCE_TYPE = "t3.micro"
   }
 }
