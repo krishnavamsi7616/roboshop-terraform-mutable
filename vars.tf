@@ -45,3 +45,4 @@ variable "RABBITMQ_PORT" {}
 variable "RABBITMQ_INSTANCE_TYPE" {}
 
 variable "INSTANCE_COUNT" {}
+variable "PROMETHEUS_IP" {}
