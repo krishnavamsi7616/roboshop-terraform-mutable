@@ -92,7 +92,7 @@ module "FRONTEND" {
   ALLOW_SG_CIDR         = concat(module.VPC.PRIVATE_SUBNET_CIDR,module.VPC.PUBLIC_SUBNET_CIDR)
   PORT                  = 80
   COMPONENT             = "frontend"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["FRONTEND"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
   LB_ARN                = module.LB.PUBLIC_LB_ARN
@@ -111,7 +111,7 @@ module "CART" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   PORT                  = 8080
   COMPONENT             = "cart"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["CART"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CART"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
@@ -132,7 +132,7 @@ module "CATALOGUE" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   PORT                  = 8080
   COMPONENT             = "catalogue"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["CATALOGUE"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
@@ -153,7 +153,7 @@ module "USER" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   PORT                  = 8080
   COMPONENT             = "user"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["USER"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["USER"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
@@ -174,7 +174,7 @@ module "SHIPPING" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   PORT                  = 8080
   COMPONENT             = "shipping"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["SHIPPING"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
@@ -195,7 +195,7 @@ module "PAYMENT" {
   ALLOW_SG_CIDR         = module.VPC.PRIVATE_SUBNET_CIDR
   PORT                  = 8080
   COMPONENT             = "payment"
-  INSTANCE_TYPE         = "t3.micro"
+  INSTANCE_TYPE         = var.INSTANCE_COUNT["PAYMENT"]["INSTANCE_TYPE"]
   WORKSTATION_IP        = var.WORKSTATION_IP
   INSTANCE_COUNT        = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
   LB_ARN                = module.LB.PRIVATE_LB_ARN
